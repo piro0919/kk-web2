@@ -1,4 +1,4 @@
-name: deploy function
+name: deploy-function
 on:
   push:
     branches: [master]
