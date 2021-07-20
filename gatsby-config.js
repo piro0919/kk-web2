@@ -92,5 +92,26 @@ module.exports = {
         sampleRate: 0.7,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-59624553-5",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-NVKSTRC",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mixpanel",
+      options: {
+        apiToken: "21ddd8b89e954ea21013dff62ec7ec2c",
+        enableOnDevMode: false,
+      },
+    },
   ],
 };

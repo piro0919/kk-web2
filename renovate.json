@@ -1,5 +1,11 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "assignees": ["piro0919"],
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "automerge": true,
+      "updateTypes": ["minor", "patch", "pin", "digest"]
+    }
+  ],
+  "reviewers": ["piro0919"]
 }

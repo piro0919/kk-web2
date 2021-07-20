@@ -10,21 +10,7 @@ export type DateProps = PageProps<
   Pick<GatsbyTypes.DateIndexQuery, "markdownRemark">
 >;
 
-function Date({
-  data: {
-    markdownRemark: {
-      frontmatter: { date, title } = { date: "", title: "" },
-      internal: { content },
-      rawMarkdownBody = "",
-    } = {
-      frontmatter: { date: "", title: "" },
-      internal: {
-        content: "",
-      },
-      rawMarkdownBody: "",
-    },
-  },
-}: DateProps): JSX.Element {
+function Date({ data: { markdownRemark } }: DateProps): JSX.Element {
   const handleCopy = useCallback<NonNullable<BlogArticleTopProps["onCopy"]>>(
     (_, result) => {
       if (result) {
@@ -40,9 +26,16 @@ function Date({
 
   return (
     <>
-      <Seo description={content} title={title} />
-      <BlogArticleTop date={date} onCopy={handleCopy} title={title}>
-        {rawMarkdownBody}
+      <Seo
+        description={markdownRemark?.internal.content}
+        title={markdownRemark?.frontmatter?.title}
+      />
+      <BlogArticleTop
+        date={markdownRemark?.frontmatter?.date}
+        onCopy={handleCopy}
+        title={markdownRemark?.frontmatter?.title}
+      >
+        {markdownRemark?.rawMarkdownBody || ""}
       </BlogArticleTop>
       <ToastContainer pauseOnFocusLoss={false} position="bottom-right" />
     </>
