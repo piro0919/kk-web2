@@ -1,0 +1,63 @@
+@import 'styles/constants';
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.heading1 {
+  font-size: 2.4rem;
+}
+
+.reactMarkDown {
+  color: map-get($map: $colors, $key: white);
+  font: 1.4rem 'jkg', sans-serif;
+  line-height: 1.5;
+  padding: 32px 0 0;
+}
+
+.a {
+  color: map-get($map: $colors, $key: red) !important;
+  text-decoration: none !important;
+}
+
+.blockquote {
+  color: darken(map-get($map: $colors, $key: white), 10) !important;
+}
+
+.code,
+.pre,
+.tr {
+  background-color: darken(map-get($map: $colors, $key: blue), 10) !important;
+}
+
+.code {
+  font-size: 1.2rem !important;
+  white-space: pre-wrap !important;
+}
+
+.codeWrapper {
+  margin: 0 0 -16px;
+  position: relative;
+}
+
+.copyToClipboardWrapper {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.iframe {
+  margin-bottom: 16px;
+}
+
+.table {
+  overflow: scroll hidden;
+}
+
+.ul {
+  list-style: disc;
+}

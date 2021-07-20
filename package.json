@@ -1,38 +1,254 @@
 {
-  "name": "kk-web2",
-  "version": "1.0.0",
-  "private": true,
-  "description": "kk-web2",
   "author": "piro",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": true
+          }
+        }
+      ],
+      "@babel/preset-typescript",
+      "@babel/react"
+    ]
   },
   "dependencies": {
+    "@fontsource/poiret-one": "4.5.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@sentry/gatsby": "6.9.0",
     "gatsby": "^3.8.1",
     "gatsby-plugin-gatsby-cloud": "^2.8.1",
     "gatsby-plugin-google-analytics": "^3.8.0",
+    "gatsby-plugin-google-fonts": "1.0.1",
     "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-manifest": "^3.8.0",
     "gatsby-plugin-mdx": "^2.8.0",
     "gatsby-plugin-react-helmet": "^4.8.0",
+    "gatsby-plugin-resolve-src": "2.1.0",
     "gatsby-plugin-sass": "^4.8.0",
     "gatsby-plugin-sharp": "^3.8.0",
     "gatsby-plugin-sitemap": "^4.4.0",
-    "gatsby-source-filesystem": "^3.8.0",
-    "gatsby-transformer-remark": "^4.5.0",
+    "gatsby-plugin-typegen": "2.2.4",
+    "gatsby-plugin-typescript": "3.8.0",
+    "gatsby-source-filesystem": "3.9.0",
+    "gatsby-transformer-remark": "4.6.0",
     "gatsby-transformer-sharp": "^3.8.0",
+    "github-markdown-css": "4.0.0",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "5.0.3",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.35.1"
-  }
+    "react-helmet": "6.1.0",
+    "react-hook-form": "7.10.1",
+    "react-icons-kit": "1.3.1",
+    "react-markdown": "6.0.2",
+    "react-syntax-highlighter": "15.4.3",
+    "react-toastify": "7.0.4",
+    "rehype-raw": "5.1.0",
+    "remark-gfm": "1.0.0",
+    "ress": "4.0.0",
+    "rooks": "5.2.0",
+    "sass": "1.32.12",
+    "sass-mq": "5.0.1",
+    "use-http": "1.0.21"
+  },
+  "description": "Freelance front-end programmer piro's website",
+  "devDependencies": {
+    "@babel/cli": "7.14.5",
+    "@babel/core": "7.14.6",
+    "@babel/plugin-proposal-class-properties": "7.14.5",
+    "@babel/preset-env": "7.14.7",
+    "@babel/preset-react": "7.14.5",
+    "@babel/preset-typescript": "7.14.5",
+    "@types/node": "16.0.0",
+    "@types/react": "17.0.13",
+    "@types/react-copy-to-clipboard": "5.0.1",
+    "@types/react-dom": "17.0.8",
+    "@types/react-helmet": "6.1.2",
+    "@types/react-syntax-highlighter": "13.5.2",
+    "@typescript-eslint/eslint-plugin": "4.28.2",
+    "@typescript-eslint/parser": "4.28.2",
+    "eslint": "7.30.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-css-modules": "2.11.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-sort-keys-shorthand": "2.1.0",
+    "eslint-plugin-typescript-sort-keys": "1.7.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.3.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-css-modules": "2.2.0",
+    "stylelint-config-recommended-scss": "4.3.0",
+    "stylelint-config-sass-guidelines": "8.0.0",
+    "stylelint-scss": "3.19.0",
+    "ts-graphql-plugin": "2.1.3",
+    "typescript": "4.3.5",
+    "typescript-plugin-css-modules": "3.4.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:react-hooks/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:css-modules/recommended",
+      "plugin:typescript-sort-keys/recommended",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2020,
+      "project": [
+        "./tsconfig.json"
+      ],
+      "sourceType": "module"
+    },
+    "plugins": [
+      "prettier",
+      "react",
+      "@typescript-eslint",
+      "import",
+      "sort-keys-shorthand",
+      "jsx-a11y",
+      "css-modules",
+      "typescript-sort-keys"
+    ],
+    "rules": {
+      "import/order": [
+        "error",
+        {
+          "alphabetize": {
+            "caseInsensitive": true,
+            "order": "asc"
+          }
+        }
+      ],
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "aspects": [
+            "invalidHref",
+            "preferButton"
+          ],
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "hrefLeft",
+            "hrefRight"
+          ]
+        }
+      ],
+      "prettier/prettier": "error",
+      "react/jsx-sort-props": [
+        "error",
+        {
+          "callbacksLast": false,
+          "ignoreCase": false,
+          "noSortAlphabetically": false,
+          "reservedFirst": false,
+          "shorthandFirst": false,
+          "shorthandLast": false
+        }
+      ],
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "sort-keys-shorthand/sort-keys-shorthand": [
+        "error",
+        "asc",
+        {
+          "caseSensitive": true,
+          "natural": true,
+          "shorthand": "first"
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": [
+            "src"
+          ]
+        }
+      },
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "name": "kk-web2",
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "build:tc": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "lint:all": "npm-run-all -p lint:*",
+    "lint:es": "eslint . --ext .ts,.tsx --fix",
+    "lint:style": "stylelint '**/*.scss' --fix",
+    "serve": "gatsby serve",
+    "start": "gatsby develop",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-sass-guidelines",
+      "stylelint-config-recommended-scss",
+      "stylelint-config-css-modules"
+    ],
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "include",
+            "mixin"
+          ]
+        }
+      ],
+      "color-named": [
+        "never",
+        {
+          "ignore": [
+            "inside-function"
+          ]
+        }
+      ],
+      "selector-class-pattern": null
+    }
+  },
+  "version": "1.0.0"
 }

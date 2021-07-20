@@ -1,0 +1,15 @@
+@import 'styles/constants';
+
+.textarea {
+  background: map-get($map: $colors, $key: black);
+  border: 1px solid map-get($map: $colors, $key: black);
+  color: map-get($map: $colors, $key: white);
+  min-height: 160px;
+  overflow: hidden scroll;
+  padding: calc(4px - 1px * 2) calc(8px - 1px * 2);
+  resize: vertical;
+}
+
+.error {
+  border-color: map-get($map: $colors, $key: red);
+}

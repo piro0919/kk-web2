@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
+    "nodemailer": "^6.6.3"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.4",
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.22.0",
+    "firebase-functions-test": "^0.2.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.8.0"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "lib/index.js",
+  "name": "functions",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "build:config": "firebase functions:config:get > .runtimeconfig.json",
+    "build:watch": "tsc --watch",
+    "deploy": "firebase deploy --only functions",
+    "lint": "eslint --ext .js,.ts .",
+    "logs": "firebase functions:log",
+    "predeploy": "npm run build",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "serve:watch": "npm-run-all -p serve build:watch",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell"
+  }
+}

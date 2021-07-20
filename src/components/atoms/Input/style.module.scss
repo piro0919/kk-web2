@@ -1,0 +1,12 @@
+@import 'styles/constants';
+
+.input {
+  background: map-get($map: $colors, $key: black);
+  border: 1px solid map-get($map: $colors, $key: black);
+  color: map-get($map: $colors, $key: white);
+  padding: calc(4px - 1px * 2) calc(8px - 1px * 2);
+}
+
+.error {
+  border-color: map-get($map: $colors, $key: red);
+}

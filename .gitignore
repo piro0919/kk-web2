@@ -1,3 +1,8 @@
 node_modules/
 .cache/
 public
+
+# ADD
+lib
+.env.development
+.env.production

@@ -1,0 +1,30 @@
+@import 'styles/constants';
+
+.wrapper {
+  background: rgba(map-get($map: $colors, $key: black), 0.85);
+  padding: 24px;
+}
+
+.list {
+  display: grid;
+  gap: 24px;
+  grid-template: auto / repeat(3, auto);
+}
+
+.link {
+  color: map-get($map: $colors, $key: white);
+  display: flex;
+  flex-direction: column;
+  font: 1.2rem 'Muli', sans-serif;
+  height: 60px;
+  text-align: center;
+  width: 60px;
+}
+
+.active {
+  color: map-get($map: $colors, $key: red);
+}
+
+.name {
+  padding: 8px 0 0;
+}

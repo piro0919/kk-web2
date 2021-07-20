@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "outDir": "lib",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      },
+      {
+        "name": "ts-graphql-plugin",
+        "schema": "src/__generated__/gatsby-schema.graphql",
+        "tag": "graphql"
+      }
+    ],
+    "strict": true,
+    "target": "esnext"
+  }
+}

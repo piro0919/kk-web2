@@ -1,0 +1,20 @@
+.form {
+  max-width: 480px;
+  width: 100%;
+}
+
+.fieldsWrapper {
+  display: grid;
+  gap: 24px;
+}
+
+.fieldWrapper {
+  display: grid;
+  gap: 4px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 36px 0 0;
+}

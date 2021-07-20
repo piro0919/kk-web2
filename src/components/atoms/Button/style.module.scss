@@ -1,0 +1,8 @@
+@import 'styles/constants';
+
+.button {
+  background: map-get($map: $colors, $key: black);
+  font-family: 'Muli', sans-serif;
+  min-width: 72px;
+  padding: 4px 8px;
+}

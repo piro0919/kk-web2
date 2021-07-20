@@ -1,0 +1,15 @@
+{
+  "enviroment": {
+    "node_env": "development"
+  },
+  "nodemailer": {
+    "user": "piro.haniwa@gmail.com",
+    "pass": "Piroshiki5416!"
+  },
+  "production": {
+    "access_control_allow_origin": "https://kk-web.link"
+  },
+  "development": {
+    "access_control_allow_origin": "http://localhost:8000"
+  }
+}

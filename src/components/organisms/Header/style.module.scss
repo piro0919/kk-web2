@@ -1,0 +1,8 @@
+@import 'styles/constants';
+
+.header {
+  background: rgba(map-get($map: $colors, $key: blue), 0.75);
+  padding: 24px 0;
+  transition: 100ms;
+  width: 100%;
+}

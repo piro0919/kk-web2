@@ -1,0 +1,13 @@
+@import 'styles/constants';
+
+.wrapper {
+  display: flex;
+}
+
+.link {
+  color: map-get($map: $colors, $key: white);
+}
+
+.date {
+  font: 1rem 'Muli', sans-serif;
+}

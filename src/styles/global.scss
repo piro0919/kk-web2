@@ -1,0 +1,24 @@
+@import 'styles/constants';
+@import 'styles/mixins';
+
+html {
+  background: map-get($map: $colors, $key: blue);
+  color: map-get($map: $colors, $key: white);
+  font: 62.5% 'jkg', sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  overflow: hidden scroll;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+a {
+  color: map-get($map: $colors, $key: red);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

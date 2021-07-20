@@ -1,0 +1,45 @@
+import * as express from "express";
+import * as functions from "firebase-functions";
+import * as nodemailer from "nodemailer";
+
+const {
+  nodemailer: {pass, user},
+} = functions.config();
+// eslint-disable-next-line new-cap
+const router = express.Router({mergeParams: true});
+const transporter = nodemailer.createTransport({
+  auth: {
+    pass,
+    user,
+  },
+  port: 46,
+  secure: true,
+  service: "gmail",
+});
+
+router.all("/", async (req, res) => {
+  const {method} = req;
+
+  if (method === "OPTIONS") {
+    res.statusCode = 200;
+
+    return;
+  }
+
+  if (method === "POST") {
+    const {body: {email, name, subject, text}} = req;
+
+    await transporter.sendMail({
+      subject,
+      text,
+      from: `${name} <${email}>`,
+      to: user,
+    });
+
+    res.statusCode = 201;
+
+    return;
+  }
+});
+
+export default router;
