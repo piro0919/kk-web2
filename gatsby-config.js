@@ -7,7 +7,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: "gatsby-plugin-sass",
       options: {
         sassOptions: {
           includePaths: ["src"],
@@ -51,10 +51,10 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: "gatsby-plugin-typescript",
       options: {
         isTSX: true,
-        jsxPragma: `jsx`,
+        jsxPragma: "jsx",
         allExtensions: true,
       },
     },
@@ -67,15 +67,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `markdown-pages`,
+        name: "markdown-pages",
         path: `${__dirname}/src/markdown-pages`,
       },
     },
-    `gatsby-transformer-remark`,
+    "gatsby-transformer-remark",
     {
-      resolve: `gatsby-plugin-typegen`,
+      resolve: "gatsby-plugin-typegen",
       options: {
         emitSchema: {
           "src/__generated__/gatsby-introspection.json": true,
@@ -113,5 +113,6 @@ module.exports = {
         enableOnDevMode: false,
       },
     },
+    "gatsby-plugin-why-did-you-render",
   ],
 };

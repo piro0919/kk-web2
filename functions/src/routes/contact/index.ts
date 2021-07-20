@@ -21,7 +21,8 @@ router.all("/", async (req, res) => {
   const {method} = req;
 
   if (method === "OPTIONS") {
-    res.statusCode = 200;
+    res.status(200);
+    res.send();
 
     return;
   }
@@ -36,7 +37,8 @@ router.all("/", async (req, res) => {
       to: user,
     });
 
-    res.statusCode = 201;
+    res.status(201);
+    res.send();
 
     return;
   }

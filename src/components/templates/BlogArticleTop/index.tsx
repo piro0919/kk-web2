@@ -83,7 +83,7 @@ function BlogArticleTop({
               tr: ({ node, ...props }) => (
                 <tr {...props} className={styles.tr} />
               ),
-              ul: ({ node, ...props }) => (
+              ul: ({ node, ordered, ...props }) => (
                 <ul {...props} className={styles.ul} />
               ),
             }}
