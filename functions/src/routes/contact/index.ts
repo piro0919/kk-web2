@@ -33,7 +33,10 @@ router.all("/", async (req, res) => {
     await transporter.sendMail({
       subject,
       text,
-      from: `${name} <${email}>`,
+      replyTo: {
+        name,
+        address: email,
+      },
       to: user,
     });
 
