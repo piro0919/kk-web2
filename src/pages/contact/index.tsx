@@ -8,7 +8,7 @@ export type ContactProps = PageProps;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Contact(_: ContactProps): JSX.Element {
-  const { post, response } = useFetch(`${process.env.BASE_URL}/api`);
+  const { post, response } = useFetch(`${process.env.GATSBY_BASE_URL}/api`);
   const handleSubmit = useCallback<ContactTopProps["onSubmit"]>(
     async ({ email, name, subject, text }) => {
       await post("/contact", { email, name, subject, text });
