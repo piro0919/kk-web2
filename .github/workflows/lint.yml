@@ -1,0 +1,10 @@
+name: lint
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: npm install
+      - run: npm run lint:es
+      - run: npm run lint:style
