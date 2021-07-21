@@ -1,13 +1,16 @@
 {
-  "enviroment": {
-    "node_env": "development"
-  },
   "nodemailer": {
     "user": "piro.haniwa@gmail.com",
     "pass": "Piroshiki5416!"
   },
+  "enviroment": {
+    "node_env": "development"
+  },
   "production": {
     "access_control_allow_origin": "https://kk-web.link"
+  },
+  "recaptcha": {
+    "secret": "6LeR46obAAAAAJXBQpgSV2q6gH3WKt0ccnxeYNh-"
   },
   "development": {
     "access_control_allow_origin": "http://localhost:8000"

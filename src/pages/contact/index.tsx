@@ -1,35 +1,78 @@
-import { PageProps } from "gatsby";
-import React, { useCallback } from "react";
+import { navigate, PageProps } from "gatsby";
+import React, { useCallback, useRef, useState, useMemo } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import useFetch from "use-http";
+import usePortal from "react-useportal";
+import useFetch, { IncomingOptions } from "use-http";
 import ContactTop, { ContactTopProps } from "components/templates/ContactTop";
+import Loading from "components/templates/Loading";
 import Seo from "components/templates/Seo";
 
 export type ContactProps = PageProps;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Contact(_: ContactProps): JSX.Element {
-  const { post, response } = useFetch(`${process.env.GATSBY_BASE_URL}/api`);
+  const options = useMemo<IncomingOptions>(
+    () => ({
+      timeout: 10000,
+    }),
+    []
+  );
+  const { post, response } = useFetch(
+    `${process.env.GATSBY_BASE_URL}/api`,
+    options
+  );
+  const recaptchaRef = useRef<ContactTopProps["recaptchaRef"]["current"]>(null);
+  const [isOpenLoading, setIsOpenLoading] = useState(false);
   const handleSubmit = useCallback<ContactTopProps["onSubmit"]>(
     async ({ email, name, subject, text }) => {
-      await post("/contact", { email, name, subject, text });
+      const { current } = recaptchaRef;
 
-      if (response.ok) {
-        toast.success("Send Success Email!");
+      if (!current) {
+        toast.error("An Unknown Network Error Has Occurred");
 
         return;
       }
 
-      toast.error("An Unknown Network Error Has Occurred");
+      const token = await current.executeAsync();
+
+      if (typeof token !== "string") {
+        toast.error("reCAPTCHA Validation Failed");
+
+        current.reset();
+
+        return;
+      }
+
+      setIsOpenLoading(true);
+
+      await post("/contact", { email, name, subject, text, token });
+
+      if (!response.ok) {
+        setIsOpenLoading(false);
+
+        toast.error("An Unknown Network Error Has Occurred");
+
+        current.reset();
+
+        return;
+      }
+
+      navigate("/contact/success");
     },
     [post, response]
   );
+  const { Portal } = usePortal();
 
   return (
     <>
       <Seo title="Contact" />
-      <ContactTop onSubmit={handleSubmit} />
+      <ContactTop onSubmit={handleSubmit} recaptchaRef={recaptchaRef} />
       <ToastContainer pauseOnFocusLoss={false} position="bottom-right" />
+      {isOpenLoading ? (
+        <Portal>
+          <Loading />
+        </Portal>
+      ) : null}
     </>
   );
 }
