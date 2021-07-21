@@ -3,18 +3,20 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/display-name */
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
+import { useMemo } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Icon } from "react-icons-kit";
 import { ic_content_copy } from "react-icons-kit/md/ic_content_copy";
 import ReactMarkdown, { ReactMarkdownOptions } from "react-markdown";
+import useScrollbarSize from "react-scrollbar-size";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import rehypeRaw from "rehype-raw";
 import gfm from "remark-gfm";
-import { useWindowSize } from "rooks";
 import Layout from "../Layout";
 import * as styles from "./style.module.scss";
+import useWindowSize from "hooks/useWindowSize";
 
 export type BlogArticleTopProps = Pick<ReactMarkdownOptions, "children"> &
   Pick<CopyToClipboard.Props, "onCopy"> & {
@@ -28,6 +30,15 @@ function BlogArticleTop({
   onCopy,
   title,
 }: BlogArticleTopProps): JSX.Element {
+  const { windowWidth } = useWindowSize();
+  const { width } = useScrollbarSize();
+  const tableWrapperStyle = useMemo<CSSProperties>(
+    () => ({
+      maxWidth: `${windowWidth - width - (windowWidth >= 980 ? 24 : 12) * 2}px`,
+    }),
+    [width, windowWidth]
+  );
+
   return (
     <Layout>
       <div className={styles.wrapper}>
@@ -71,14 +82,25 @@ function BlogArticleTop({
                   </div>
                 );
               },
-              iframe: ({ node, ...props }) => (
-                <iframe {...props} className={styles.iframe} />
-              ),
+              iframe: ({ node, src, ...props }) =>
+                typeof src === "string" && src.includes("youtube") ? (
+                  <div className={styles.youtubeWrapper}>
+                    <iframe
+                      {...props}
+                      className={styles.youtube}
+                      src={src as string}
+                    />
+                  </div>
+                ) : (
+                  <iframe {...props} src={src as string} />
+                ),
               pre: ({ node, ...props }) => (
                 <pre {...props} className={styles.pre} />
               ),
               table: ({ node, ...props }) => (
-                <table {...props} className={styles.table} />
+                <div className={styles.tableWrapper} style={tableWrapperStyle}>
+                  <table {...props} className={styles.table} />
+                </div>
               ),
               tr: ({ node, ...props }) => (
                 <tr {...props} className={styles.tr} />

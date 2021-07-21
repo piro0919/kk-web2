@@ -114,5 +114,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-why-did-you-render",
+    "gatsby-plugin-remove-trailing-slashes",
   ],
 };

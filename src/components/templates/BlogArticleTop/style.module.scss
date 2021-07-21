@@ -50,12 +50,35 @@
   top: 0;
 }
 
-.iframe {
+.youtubeWrapper {
   margin-bottom: 16px;
+  max-width: 640px;
+  position: relative;
+  width: 100%;
+}
+
+.youtubeWrapper::before {
+  content: '';
+  display: block;
+  padding: 56.25% 0 0;
+}
+
+.youtube {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tableWrapper {
+  margin: 0 0 16px;
+  overflow: auto hidden;
 }
 
 .table {
-  overflow: scroll hidden;
+  margin-bottom: 0 !important;
+  // width: 100%;
 }
 
 .ul {
