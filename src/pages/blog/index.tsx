@@ -1,5 +1,6 @@
 import { graphql, PageProps } from "gatsby";
-import React, { useMemo } from "react";
+import { useMixpanel } from "gatsby-plugin-mixpanel";
+import React, { useEffect, useMemo } from "react";
 import BlogTop, { BlogTopProps } from "components/templates/BlogTop";
 import Seo from "components/templates/Seo";
 
@@ -31,6 +32,11 @@ function Blog({
       ),
     [edges]
   );
+  const mixpanel = useMixpanel();
+
+  useEffect(() => {
+    mixpanel.track("Blog");
+  }, [mixpanel]);
 
   return (
     <>

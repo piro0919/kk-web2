@@ -1,5 +1,6 @@
 import { graphql, PageProps } from "gatsby";
-import React, { useCallback } from "react";
+import { useMixpanel } from "gatsby-plugin-mixpanel";
+import React, { useCallback, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import BlogArticleTop, {
   BlogArticleTopProps,
@@ -23,6 +24,11 @@ function Date({ data: { markdownRemark } }: DateProps): JSX.Element {
     },
     []
   );
+  const mixpanel = useMixpanel();
+
+  useEffect(() => {
+    mixpanel.track("Date");
+  }, [mixpanel]);
 
   return (
     <>

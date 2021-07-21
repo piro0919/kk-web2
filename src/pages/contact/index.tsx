@@ -1,5 +1,12 @@
 import { navigate, PageProps } from "gatsby";
-import React, { useCallback, useRef, useState, useMemo } from "react";
+import { useMixpanel } from "gatsby-plugin-mixpanel";
+import React, {
+  useCallback,
+  useRef,
+  useState,
+  useMemo,
+  useEffect,
+} from "react";
 import { toast, ToastContainer } from "react-toastify";
 import usePortal from "react-useportal";
 import useFetch, { IncomingOptions } from "use-http";
@@ -62,6 +69,11 @@ function Contact(_: ContactProps): JSX.Element {
     [post, response]
   );
   const { Portal } = usePortal();
+  const mixpanel = useMixpanel();
+
+  useEffect(() => {
+    mixpanel.track("Contact");
+  }, [mixpanel]);
 
   return (
     <>
