@@ -78,11 +78,13 @@ const ContactForm = forwardRef<ReCAPTCHA, Omit<ContactFormProps, "ref">>(
         <div className={styles.buttonWrapper}>
           <Button type="submit">Submit</Button>
         </div>
-        <ReCAPTCHA
-          ref={ref}
-          sitekey="6LeR46obAAAAAOJmo1MINZmHs4jyI5om8BakkIkM"
-          size="invisible"
-        />
+        {typeof process.env.RECAPTCHA_SITE_KEY === "string" ? (
+          <ReCAPTCHA
+            ref={ref}
+            sitekey={process.env.RECAPTCHA_SITE_KEY}
+            size="invisible"
+          />
+        ) : null}
       </form>
     );
   }
