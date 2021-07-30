@@ -3,6 +3,10 @@
   "extends": ["config:base"],
   "packageRules": [
     {
+      "automerge": false,
+      "packageNames": ["sass"]
+    },
+    {
       "automerge": true,
       "updateTypes": ["minor", "patch", "pin", "digest"]
     }
