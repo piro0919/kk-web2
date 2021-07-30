@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 
-import Layout from "../Layout";
 import * as styles from "./style.module.scss";
 import DefinitionList, {
   DefinitionListProps,
@@ -42,11 +41,9 @@ function AboutTop(): JSX.Element {
   );
 
   return (
-    <Layout>
-      <div className={styles.wrapper}>
-        <DefinitionList definitions={definitions} />
-      </div>
-    </Layout>
+    <div className={styles.wrapper}>
+      <DefinitionList definitions={definitions} />
+    </div>
   );
 }
 

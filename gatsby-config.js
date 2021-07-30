@@ -115,5 +115,13 @@ module.exports = {
     },
     "gatsby-plugin-why-did-you-render",
     "gatsby-plugin-remove-trailing-slashes",
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(
+          "./src/components/templates/Layout/index.tsx"
+        ),
+      },
+    },
   ],
 };

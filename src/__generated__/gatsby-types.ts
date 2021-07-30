@@ -261,6 +261,8 @@ type Directory_ctimeArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly port: Maybe<Scalars['Int']>;
+  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -763,6 +765,7 @@ type SitePluginPluginOptions = {
   readonly routeChangeEventName: Maybe<Scalars['String']>;
   readonly apiToken: Maybe<Scalars['String']>;
   readonly enableOnDevMode: Maybe<Scalars['Boolean']>;
+  readonly component: Maybe<Scalars['String']>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
 };
 
@@ -969,6 +972,8 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  port: Maybe<IntQueryOperatorInput>;
+  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2103,6 +2108,8 @@ type SiteFieldsEnum =
   | 'siteMetadata.title'
   | 'siteMetadata.description'
   | 'siteMetadata.siteUrl'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2204,6 +2211,8 @@ type SiteGroupConnection = {
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  readonly port: Maybe<IntQueryOperatorInput>;
+  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -2445,6 +2454,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly routeChangeEventName: Maybe<StringQueryOperatorInput>;
   readonly apiToken: Maybe<StringQueryOperatorInput>;
   readonly enableOnDevMode: Maybe<BooleanQueryOperatorInput>;
+  readonly component: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -2748,6 +2758,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.routeChangeEventName'
   | 'pluginCreator.pluginOptions.apiToken'
   | 'pluginCreator.pluginOptions.enableOnDevMode'
+  | 'pluginCreator.pluginOptions.component'
   | 'pluginCreator.pluginOptions.pathCheck'
   | 'pluginCreator.nodeAPIs'
   | 'pluginCreator.browserAPIs'
@@ -3532,6 +3543,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.routeChangeEventName'
   | 'pluginOptions.apiToken'
   | 'pluginOptions.enableOnDevMode'
+  | 'pluginOptions.component'
   | 'pluginOptions.pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -3723,6 +3735,26 @@ type SiteBuildMetadataSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type DateIndexQueryVariables = Exact<{
+  path: Scalars['String'];
+}>;
+
+
+type DateIndexQuery = { readonly markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'rawMarkdownBody'>
+    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>>, readonly internal: Pick<Internal, 'content'> }
+  )> };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogIndexQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title'>> } }> } };
+
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -3749,24 +3781,9 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogIndexQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title'>> } }> } };
-
 type SeoIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SeoIndexQuery = { readonly file: Maybe<Pick<File, 'publicURL'>>, readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteUrl' | 'description' | 'title'>> }>, readonly sitePage: Maybe<Pick<SitePage, 'path'>> };
-
-type DateIndexQueryVariables = Exact<{
-  path: Scalars['String'];
-}>;
-
-
-type DateIndexQuery = { readonly markdownRemark: Maybe<(
-    Pick<MarkdownRemark, 'rawMarkdownBody'>
-    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>>, readonly internal: Pick<Internal, 'content'> }
-  )> };
 
 }

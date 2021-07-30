@@ -1,6 +1,5 @@
 import { Link } from "gatsby";
 import React, { useMemo } from "react";
-
 import * as styles from "./style.module.scss";
 import useMenu from "hooks/useMenu";
 

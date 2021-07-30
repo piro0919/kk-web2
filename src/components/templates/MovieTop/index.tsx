@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import Layout from "../Layout";
 import * as styles from "./style.module.scss";
 import UnorderedList, {
   UnorderedListProps,
@@ -45,11 +44,9 @@ function MovieTop(): JSX.Element {
   );
 
   return (
-    <Layout>
-      <div className={styles.wrapper}>
-        <UnorderedList unordereds={movies} />
-      </div>
-    </Layout>
+    <div className={styles.wrapper}>
+      <UnorderedList unordereds={movies} />
+    </div>
   );
 }
 
