@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import Layout from "../Layout";
 import * as styles from "./style.module.scss";
 import UnorderedList, {
   UnorderedListProps,
@@ -28,9 +29,11 @@ function SiteTop(): JSX.Element {
   );
 
   return (
-    <div className={styles.wrapper}>
-      <UnorderedList unordereds={sites} />
-    </div>
+    <Layout>
+      <div className={styles.wrapper}>
+        <UnorderedList unordereds={sites} />
+      </div>
+    </Layout>
   );
 }
 

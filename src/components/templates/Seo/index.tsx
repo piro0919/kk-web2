@@ -1,3 +1,4 @@
+import { useLocation } from "@reach/router";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
@@ -24,7 +25,6 @@ function Seo({
     } = {
       siteMetadata: {},
     },
-    sitePage: { path } = { path: "" },
   } = useStaticQuery<GatsbyTypes.SeoIndexQuery>(graphql`
     query SeoIndex {
       file(name: { eq: "kk-web" }) {
@@ -42,6 +42,7 @@ function Seo({
       }
     }
   `);
+  const { pathname } = useLocation();
 
   return (
     <Helmet
@@ -67,7 +68,7 @@ function Seo({
         property="og:title"
       />
       <meta content={ogType} property="og:type" />
-      <meta content={`${siteUrl}${path}`} property="og:url" />
+      <meta content={`${siteUrl}${pathname}`} property="og:url" />
       <meta content="piro" name="author" />
       <meta
         content={

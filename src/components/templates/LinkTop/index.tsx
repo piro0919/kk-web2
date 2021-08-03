@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import Layout from "../Layout";
 import * as styles from "./style.module.scss";
 import UnorderedList, {
   UnorderedListProps,
@@ -60,9 +61,11 @@ function LinkTop(): JSX.Element {
   );
 
   return (
-    <div className={styles.wrapper}>
-      <UnorderedList unordereds={links} />
-    </div>
+    <Layout>
+      <div className={styles.wrapper}>
+        <UnorderedList unordereds={links} />
+      </div>
+    </Layout>
   );
 }
 

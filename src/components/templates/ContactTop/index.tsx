@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "../Layout";
 import * as stylse from "./style.module.scss";
 import ContactForm, {
   ContactFormProps,
@@ -10,9 +11,11 @@ export type ContactTopProps = Pick<ContactFormProps, "onSubmit"> & {
 
 function ContactTop({ onSubmit, recaptchaRef }: ContactTopProps): JSX.Element {
   return (
-    <div className={stylse.wrapper}>
-      <ContactForm onSubmit={onSubmit} ref={recaptchaRef} />
-    </div>
+    <Layout>
+      <div className={stylse.wrapper}>
+        <ContactForm onSubmit={onSubmit} ref={recaptchaRef} />
+      </div>
+    </Layout>
   );
 }
 
