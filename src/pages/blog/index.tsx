@@ -37,18 +37,23 @@ function Blog({
       })
     );
 
-    if (typeof q !== "string") {
+    if (!q) {
       return blogs;
     }
 
     const fuse = new Fuse(blogs, {
       keys: ["content", "title"],
+      shouldSort: false,
+      threshold: 0.45,
     });
 
     return fuse
-      .search(decodeURIComponent(q))
-      .map(({ item }) => item)
-      .sort(({ date: dateA }, { date: dateB }) => (dateA < dateB ? 1 : -1));
+      .search(
+        Array.isArray(q)
+          ? q.map((q) => decodeURIComponent(q)).join(" ")
+          : decodeURIComponent(q)
+      )
+      .map(({ item }) => item);
   }, [edges, q]);
   const mixpanel = useMixpanel();
 

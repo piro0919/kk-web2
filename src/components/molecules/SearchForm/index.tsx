@@ -14,14 +14,25 @@ type FieldValues = {
 
 function SearchForm(): JSX.Element {
   const { search } = useLocation();
-  const { q } = useMemo(() => parse(search), [search]);
+  const { q: searchQ } = useMemo(() => parse(search), [search]);
+  const q = useMemo(() => {
+    if (typeof searchQ === "string") {
+      return searchQ;
+    }
+
+    if (Array.isArray(searchQ)) {
+      return searchQ.join(" ");
+    }
+
+    return "";
+  }, [searchQ]);
   const { handleSubmit, register } = useForm<FieldValues>({
     defaultValues: {
-      q: typeof q === "string" ? q : "",
+      q,
     },
   });
   const onSubmit = useCallback<SubmitHandler<FieldValues>>(({ q }) => {
-    navigate(`/blog${q && `?q=${encodeURIComponent(q)}`}`);
+    navigate(`/blog/${q && `?q=${encodeURIComponent(q)}`}`);
   }, []);
 
   return (
