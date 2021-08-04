@@ -10,6 +10,11 @@
   margin: 0 0 24px;
 }
 
+.listWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .list {
   display: grid;
   gap: 24px;

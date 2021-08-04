@@ -25,7 +25,9 @@ function MobileNavigation(): JSX.Element {
       <div className={styles.searchFormWrapper}>
         <SearchForm />
       </div>
-      <ul className={styles.list}>{items}</ul>
+      <div className={styles.listWrapper}>
+        <ul className={styles.list}>{items}</ul>
+      </div>
     </nav>
   );
 }
