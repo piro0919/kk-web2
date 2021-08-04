@@ -25,6 +25,7 @@
 
 .blockquote {
   color: darken(map-get($map: $colors, $key: white), 10) !important;
+  word-break: break-all;
 }
 
 .code,
@@ -48,6 +49,10 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.pre {
+  word-break: break-all;
 }
 
 .youtubeWrapper {

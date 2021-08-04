@@ -23,7 +23,9 @@ function MobileNavigation(): JSX.Element {
   return (
     <nav className={styles.wrapper}>
       <div className={styles.searchFormWrapper}>
-        <SearchForm />
+        <div className={styles.searchFormInner}>
+          <SearchForm />
+        </div>
       </div>
       <div className={styles.listWrapper}>
         <ul className={styles.list}>{items}</ul>
