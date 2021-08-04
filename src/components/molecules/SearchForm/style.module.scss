@@ -1,7 +1,9 @@
 @import 'styles/constants';
 
 .form {
-  display: flex;
+  display: grid;
+  grid-template: 1fr / 1fr auto;
+  width: 100%;
 }
 
 .button {

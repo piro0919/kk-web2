@@ -3,6 +3,5 @@
 .button {
   background: map-get($map: $colors, $key: black);
   font-family: 'Muli', sans-serif;
-  min-width: 72px;
-  padding: 4px 8px;
+  padding: 4px 12px;
 }
