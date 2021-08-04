@@ -1,0 +1,9 @@
+@import 'styles/constants';
+
+.form {
+  display: flex;
+}
+
+.button {
+  border-left: 1px solid map-get($map: $colors, $key: blue);
+}

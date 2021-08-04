@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React, { useMemo } from "react";
 import Icon from "react-icons-kit";
+import SearchForm from "../SearchForm";
 import * as styles from "./style.module.scss";
 import useMenu from "hooks/useMenu";
 
@@ -21,6 +22,9 @@ function MobileNavigation(): JSX.Element {
 
   return (
     <nav className={styles.wrapper}>
+      <div className={styles.searchFormWrapper}>
+        <SearchForm />
+      </div>
       <ul className={styles.list}>{items}</ul>
     </nav>
   );

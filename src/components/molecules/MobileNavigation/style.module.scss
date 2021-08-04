@@ -5,6 +5,11 @@
   padding: 24px;
 }
 
+.searchFormWrapper {
+  border: 1px solid map-get($map: $colors, $key: blue);
+  margin: 0 0 24px;
+}
+
 .list {
   display: grid;
   gap: 24px;

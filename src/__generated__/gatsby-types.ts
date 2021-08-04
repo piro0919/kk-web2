@@ -3818,7 +3818,7 @@ type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArr
 type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogIndexQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title'>> } }> } };
+type BlogIndexQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title'>>, readonly internal: Pick<Internal, 'content'> } }> } };
 
 type SeoIndexQueryVariables = Exact<{ [key: string]: never; }>;
 

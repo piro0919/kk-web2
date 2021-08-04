@@ -1,8 +1,18 @@
 @import 'styles/constants';
+@import 'sass-mq';
 
 .header {
+  align-items: center;
   background: rgba(map-get($map: $colors, $key: blue), 0.75);
+  display: flex;
   padding: 24px 0;
   transition: 100ms;
   width: 100%;
+}
+
+.searchFormWrapper {
+  margin: 0 0 0 96px;
+  @include mq($until: wide) {
+    display: none;
+  }
 }

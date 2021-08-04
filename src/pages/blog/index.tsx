@@ -1,5 +1,8 @@
+import { useLocation } from "@reach/router";
+import Fuse from "fuse.js";
 import { graphql, PageProps } from "gatsby";
 import { useMixpanel } from "gatsby-plugin-mixpanel";
+import { parse } from "query-string";
 import React, { useEffect, useMemo } from "react";
 import BlogTop, { BlogTopProps } from "components/templates/BlogTop";
 import Seo from "components/templates/Seo";
@@ -13,25 +16,40 @@ function Blog({
     allMarkdownRemark: { edges },
   },
 }: BlogProps): JSX.Element {
-  const blogs = useMemo<BlogTopProps["blogs"]>(
-    () =>
-      edges.map(
-        ({
-          node: {
-            frontmatter: { date = "", slug = "", title = "" } = {
-              date: "",
-              slug: "",
-              title: "",
-            },
+  const { search } = useLocation();
+  const { q } = useMemo(() => parse(search), [search]);
+  const blogs = useMemo<BlogTopProps["blogs"]>(() => {
+    const blogs = edges.map(
+      ({
+        node: {
+          frontmatter: { date = "", slug = "", title = "" } = {
+            date: "",
+            slug: "",
+            title: "",
           },
-        }) => ({
-          date,
-          title,
-          to: slug,
-        })
-      ),
-    [edges]
-  );
+          internal: { content },
+        },
+      }) => ({
+        content,
+        date,
+        title,
+        to: slug,
+      })
+    );
+
+    if (typeof q !== "string") {
+      return blogs;
+    }
+
+    const fuse = new Fuse(blogs, {
+      keys: ["content", "title"],
+    });
+
+    return fuse
+      .search(decodeURIComponent(q))
+      .map(({ item }) => item)
+      .sort(({ date: dateA }, { date: dateB }) => (dateA < dateB ? 1 : -1));
+  }, [edges, q]);
   const mixpanel = useMixpanel();
 
   useEffect(() => {
@@ -55,6 +73,9 @@ export const pageQuery = graphql`
             date
             slug
             title
+          }
+          internal {
+            content
           }
         }
       }
