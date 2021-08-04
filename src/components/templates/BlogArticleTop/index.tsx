@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/display-name */
+import { Link } from "gatsby";
 import React, { CSSProperties, ReactNode, useMemo } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Icon } from "react-icons-kit";
@@ -21,12 +22,25 @@ export type BlogArticleTopProps = Pick<ReactMarkdownOptions, "children"> &
   Pick<CopyToClipboard.Props, "onCopy"> & {
     date: ReactNode;
     title: ReactNode;
+  } & {
+    next?: {
+      date: string;
+      slug: string;
+      title: string;
+    };
+    prev?: {
+      date: string;
+      slug: string;
+      title: string;
+    };
   };
 
 function BlogArticleTop({
   children,
   date,
+  next,
   onCopy,
+  prev,
   title,
 }: BlogArticleTopProps): JSX.Element {
   const { windowWidth } = useWindowSize();
@@ -51,7 +65,7 @@ function BlogArticleTop({
               blockquote: ({ node, ...props }) => (
                 <blockquote {...props} className={styles.blockquote} />
               ),
-              code: ({ inline, node, ...props }) => {
+              code: ({ inline, node, ref, ...props }) => {
                 const { children } = props;
                 const text =
                   Array.isArray(children) && typeof children[0] === "string"
@@ -59,7 +73,7 @@ function BlogArticleTop({
                     : undefined;
 
                 return inline ? (
-                  <code {...props} className={styles.code} />
+                  <code {...props} className={styles.code} ref={ref} />
                 ) : (
                   <div className={styles.codeWrapper}>
                     {typeof text === "string" ? (
@@ -76,6 +90,7 @@ function BlogArticleTop({
                       codeTagProps={{
                         className: styles.code,
                       }}
+                      ref={ref as never}
                       style={atomOneDark}
                     />
                   </div>
@@ -114,6 +129,24 @@ function BlogArticleTop({
           >
             {children}
           </ReactMarkdown>
+          <nav className={styles.nav}>
+            <div>
+              {prev ? (
+                <Link to={prev.slug}>
+                  <p>{prev.title}</p>
+                  <p className={styles.date}>{prev.date}</p>
+                </Link>
+              ) : null}
+            </div>
+            <div className={styles.nextLinkWrapper}>
+              {next ? (
+                <Link to={next.slug}>
+                  <p>{next.title}</p>
+                  <p className={styles.date}>{next.date}</p>
+                </Link>
+              ) : null}
+            </div>
+          </nav>
         </div>
       </div>
     </Layout>

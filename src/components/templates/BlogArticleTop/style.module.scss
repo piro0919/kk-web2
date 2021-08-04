@@ -84,3 +84,20 @@
 .ul {
   list-style: disc;
 }
+
+.nav {
+  display: grid;
+  gap: 24px;
+  grid-template: auto / repeat(2, 1fr);
+  margin: 36px 0 0;
+}
+
+.nextLinkWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.date {
+  font-size: 1rem;
+  margin: 4px 0 0;
+}
