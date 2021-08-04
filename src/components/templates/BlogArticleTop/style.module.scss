@@ -86,6 +86,7 @@
 }
 
 .nav {
+  align-items: center;
   display: grid;
   gap: 24px;
   grid-template: auto / repeat(2, 1fr);

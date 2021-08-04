@@ -7,7 +7,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     },
   } = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
         edges {
           node {
             frontmatter {
@@ -34,8 +34,8 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       createPage({
         component,
         context: {
-          next: edges.find((_, edgeIndex) => index === edgeIndex - 1),
-          prev: edges.find((_, edgeIndex) => index === edgeIndex + 1),
+          next: edges.find((_, edgeIndex) => index === edgeIndex + 1),
+          prev: edges.find((_, edgeIndex) => index === edgeIndex - 1),
         },
         path: slug,
       });
