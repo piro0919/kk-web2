@@ -11,6 +11,18 @@ function ServiceTop(): JSX.Element {
       {
         children: (
           <a
+            href="https://on-memo.kk-web.link/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            おんめも
+          </a>
+        ),
+        key: "on-memo",
+      },
+      {
+        children: (
+          <a
             href="https://siritori-timer.kk-web.link/"
             rel="noreferrer"
             target="_blank"
