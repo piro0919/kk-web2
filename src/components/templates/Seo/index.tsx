@@ -77,6 +77,10 @@ function Seo({
         name="description"
       />
       <meta content="summary_large_image" name="twitter:card" />
+      <meta
+        content="kOVOv5dHmbA1CqrY4lMvgR2zWO5ParYkrnLbxfDCtLc"
+        name="google-site-verification"
+      />
     </Helmet>
   );
 }
