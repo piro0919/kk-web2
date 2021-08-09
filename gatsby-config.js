@@ -93,12 +93,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-59624553-5",
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-NVKSTRC",

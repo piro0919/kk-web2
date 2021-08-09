@@ -69,7 +69,7 @@ function Seo({
       />
       <meta content={ogType} property="og:type" />
       <meta content={`${siteUrl}${pathname}`} property="og:url" />
-      <meta content="piro" name="author" />
+      <meta content="kk-web" name="author" />
       <meta
         content={
           typeof description === "string" ? description : siteDescription
