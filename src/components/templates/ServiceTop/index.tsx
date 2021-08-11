@@ -18,7 +18,7 @@ function ServiceTop(): JSX.Element {
             おんめも
           </a>
         ),
-        key: "on-memo",
+        key: "おんめも",
       },
       {
         children: (
@@ -30,7 +30,7 @@ function ServiceTop(): JSX.Element {
             限界しりとりタイマー
           </a>
         ),
-        key: "siritori",
+        key: "限界しりとりタイマー",
       },
       {
         children: (
@@ -42,7 +42,7 @@ function ServiceTop(): JSX.Element {
             せりふや
           </a>
         ),
-        key: "serifuya",
+        key: "せりふや",
       },
       {
         children: (
@@ -54,7 +54,7 @@ function ServiceTop(): JSX.Element {
             レシグル
           </a>
         ),
-        key: "recigle",
+        key: "レシグル",
       },
     ],
     []

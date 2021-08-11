@@ -5,56 +5,44 @@ import UnorderedList, {
   UnorderedListProps,
 } from "components/organisms/UnorderedList";
 
-function LinkTop(): JSX.Element {
-  const links = useMemo<UnorderedListProps["unordereds"]>(
+function NpmTop(): JSX.Element {
+  const packages = useMemo<UnorderedListProps["unordereds"]>(
     () => [
       {
         children: (
           <a
-            href="https://github.com/piro0919"
+            href="https://www.npmjs.com/package/react-comic-viewer"
             rel="noreferrer"
             target="_blank"
           >
-            GitHub
+            react-comic-viewer
           </a>
         ),
-        key: "GitHub",
+        key: "react-comic-viewer",
       },
       {
         children: (
           <a
-            href="https://www.instagram.com/piro9190/"
+            href="https://www.npmjs.com/package/react-three-toggle"
             rel="noreferrer"
             target="_blank"
           >
-            Instagram
+            react-three-toggle
           </a>
         ),
-        key: "Instagram",
+        key: "react-three-toggle",
       },
       {
         children: (
           <a
-            href="https://join.slack.com/t/kk-webhq/shared_invite/zt-r0qjvw1f-5QCnXyGzW4~OA6574tIipg"
+            href="https://www.npmjs.com/package/use-pwa2"
             rel="noreferrer"
             target="_blank"
           >
-            Slack
+            use-pwa2
           </a>
         ),
-        key: "Slack",
-      },
-      {
-        children: (
-          <a
-            href="https://www.wantedly.com/users/125337597"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Wantedly
-          </a>
-        ),
-        key: "Wantedly",
+        key: "use-pwa2",
       },
     ],
     []
@@ -63,10 +51,10 @@ function LinkTop(): JSX.Element {
   return (
     <Layout>
       <div className={styles.wrapper}>
-        <UnorderedList unordereds={links} />
+        <UnorderedList unordereds={packages} />
       </div>
     </Layout>
   );
 }
 
-export default LinkTop;
+export default NpmTop;

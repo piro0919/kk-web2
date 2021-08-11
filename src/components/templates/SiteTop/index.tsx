@@ -10,19 +10,11 @@ function SiteTop(): JSX.Element {
     () => [
       {
         children: (
-          <a href="https://hitmeup.co.jp/" rel="noreferrer" target="_blank">
-            ヒットミーアップ株式会社
-          </a>
-        ),
-        key: "hitmeup",
-      },
-      {
-        children: (
           <a href="http://kontaniki.com/" rel="noreferrer" target="_blank">
             1stKontact
           </a>
         ),
-        key: "kontaniki",
+        key: "1stKontact",
       },
     ],
     []

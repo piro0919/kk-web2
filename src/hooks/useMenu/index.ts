@@ -1,9 +1,7 @@
 import { useMemo } from "react";
 import { blog } from "react-icons-kit/icomoon/blog";
+import { briefcase } from "react-icons-kit/icomoon/briefcase";
 import { bubbles2 } from "react-icons-kit/icomoon/bubbles2";
-import { cogs } from "react-icons-kit/icomoon/cogs";
-import { earth } from "react-icons-kit/icomoon/earth";
-import { film } from "react-icons-kit/icomoon/film";
 import { home } from "react-icons-kit/icomoon/home";
 import { link } from "react-icons-kit/icomoon/link";
 import { user } from "react-icons-kit/icomoon/user";
@@ -51,19 +49,9 @@ function useMenu(): MenuData {
         to: "/link",
       },
       {
-        icon: film,
-        name: "Movie",
-        to: "/movie",
-      },
-      {
-        icon: cogs,
-        name: "Service",
-        to: "/service",
-      },
-      {
-        icon: earth,
-        name: "Site",
-        to: "/site",
+        icon: briefcase,
+        name: "Portfolio",
+        to: "/portfolio",
       },
     ],
     []

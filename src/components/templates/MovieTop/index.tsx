@@ -18,7 +18,7 @@ function MovieTop(): JSX.Element {
             YouTube
           </a>
         ),
-        key: "youTube",
+        key: "YouTube",
       },
       {
         children: (
@@ -26,7 +26,7 @@ function MovieTop(): JSX.Element {
             Vimeo
           </a>
         ),
-        key: "vimeo",
+        key: "Vimeo",
       },
       {
         children: (
