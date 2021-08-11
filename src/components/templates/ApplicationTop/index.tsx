@@ -20,6 +20,18 @@ function ApplicationTop(): JSX.Element {
         ),
         key: "おんめも",
       },
+      {
+        children: (
+          <a
+            href="https://play.google.com/store/apps/details?id=link.kk_web.recigle.twa"
+            rel="noreferrer"
+            target="_blank"
+          >
+            レシグル
+          </a>
+        ),
+        key: "レシグル",
+      },
     ],
     []
   );

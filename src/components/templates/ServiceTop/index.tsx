@@ -23,18 +23,6 @@ function ServiceTop(): JSX.Element {
       {
         children: (
           <a
-            href="https://siritori-timer.kk-web.link/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            限界しりとりタイマー
-          </a>
-        ),
-        key: "限界しりとりタイマー",
-      },
-      {
-        children: (
-          <a
             href="https://serifuya.kk-web.link/"
             rel="noreferrer"
             target="_blank"
@@ -55,6 +43,18 @@ function ServiceTop(): JSX.Element {
           </a>
         ),
         key: "レシグル",
+      },
+      {
+        children: (
+          <a
+            href="https://siritori-timer.kk-web.link/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            限界しりとりタイマー
+          </a>
+        ),
+        key: "限界しりとりタイマー",
       },
     ],
     []
