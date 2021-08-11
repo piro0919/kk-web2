@@ -23,11 +23,13 @@
 }
 
 .headerWrapper {
+  background: rgba(map-get($map: $colors, $key: blue), 0.75);
   display: flex;
   justify-content: center;
   overflow: hidden;
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 1;
 }
 
