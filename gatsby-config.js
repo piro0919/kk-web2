@@ -24,12 +24,6 @@ module.exports = {
     },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: "src/images/icon.png",
-      },
-    },
     "gatsby-transformer-remark",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
@@ -109,20 +103,19 @@ module.exports = {
     },
     "gatsby-plugin-why-did-you-render",
     "gatsby-plugin-remove-trailing-slashes",
-    // {
-    //   resolve: "gatsby-plugin-manifest",
-    //   options: {
-    //     background_color: "#323446",
-    //     description: "Freelance front-end programmer piro's website",
-    //     display: "standalone",
-    //     icon: "src/images/icon.png",
-    //     lang: "ja",
-    //     name: "kk-web",
-    //     short_name: "kk-web",
-    //     start_url: "/",
-    //     theme_color: "#323446",
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        // background_color: "#323446",
+        // description: "Freelance front-end programmer piro's website",
+        // display: "standalone",
+        icon: "src/images/icon.png",
+        // name: "kk-web",
+        // short_name: "kk-web",
+        // start_url: "/",
+        // theme_color: "#323446",
+      },
+    },
     // "gatsby-plugin-offline",
   ],
 };
