@@ -792,7 +792,12 @@ type SitePluginPluginOptions = {
   readonly routeChangeEventName: Maybe<Scalars['String']>;
   readonly apiToken: Maybe<Scalars['String']>;
   readonly enableOnDevMode: Maybe<Scalars['Boolean']>;
+  readonly background_color: Maybe<Scalars['String']>;
+  readonly description: Maybe<Scalars['String']>;
   readonly icon: Maybe<Scalars['String']>;
+  readonly short_name: Maybe<Scalars['String']>;
+  readonly start_url: Maybe<Scalars['String']>;
+  readonly theme_color: Maybe<Scalars['String']>;
   readonly legacy: Maybe<Scalars['Boolean']>;
   readonly theme_color_in_head: Maybe<Scalars['Boolean']>;
   readonly cache_busting_mode: Maybe<Scalars['String']>;
@@ -2514,7 +2519,12 @@ type SitePluginPluginOptionsFilterInput = {
   readonly routeChangeEventName: Maybe<StringQueryOperatorInput>;
   readonly apiToken: Maybe<StringQueryOperatorInput>;
   readonly enableOnDevMode: Maybe<BooleanQueryOperatorInput>;
+  readonly background_color: Maybe<StringQueryOperatorInput>;
+  readonly description: Maybe<StringQueryOperatorInput>;
   readonly icon: Maybe<StringQueryOperatorInput>;
+  readonly short_name: Maybe<StringQueryOperatorInput>;
+  readonly start_url: Maybe<StringQueryOperatorInput>;
+  readonly theme_color: Maybe<StringQueryOperatorInput>;
   readonly legacy: Maybe<BooleanQueryOperatorInput>;
   readonly theme_color_in_head: Maybe<BooleanQueryOperatorInput>;
   readonly cache_busting_mode: Maybe<StringQueryOperatorInput>;
@@ -2817,7 +2827,12 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.routeChangeEventName'
   | 'pluginCreator.pluginOptions.apiToken'
   | 'pluginCreator.pluginOptions.enableOnDevMode'
+  | 'pluginCreator.pluginOptions.background_color'
+  | 'pluginCreator.pluginOptions.description'
   | 'pluginCreator.pluginOptions.icon'
+  | 'pluginCreator.pluginOptions.short_name'
+  | 'pluginCreator.pluginOptions.start_url'
+  | 'pluginCreator.pluginOptions.theme_color'
   | 'pluginCreator.pluginOptions.legacy'
   | 'pluginCreator.pluginOptions.theme_color_in_head'
   | 'pluginCreator.pluginOptions.cache_busting_mode'
@@ -3602,7 +3617,12 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.routeChangeEventName'
   | 'pluginOptions.apiToken'
   | 'pluginOptions.enableOnDevMode'
+  | 'pluginOptions.background_color'
+  | 'pluginOptions.description'
   | 'pluginOptions.icon'
+  | 'pluginOptions.short_name'
+  | 'pluginOptions.start_url'
+  | 'pluginOptions.theme_color'
   | 'pluginOptions.legacy'
   | 'pluginOptions.theme_color_in_head'
   | 'pluginOptions.cache_busting_mode'
