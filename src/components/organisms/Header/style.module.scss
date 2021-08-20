@@ -10,7 +10,7 @@
 
 .searchFormWrapper {
   margin: 0 0 0 96px;
-  @include mq($until: wide) {
+  @include mq($until: desktop) {
     display: none;
   }
 }
