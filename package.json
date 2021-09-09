@@ -103,7 +103,7 @@
     "eslint-plugin-typescript-sort-keys": "1.8.0",
     "gatsby-plugin-remove-trailing-slashes": "3.13.0",
     "npm-run-all": "4.1.5",
-    "prettier": "2.3.2",
+    "prettier": "2.4.0",
     "stylelint": "13.13.1",
     "stylelint-config-css-modules": "2.2.0",
     "stylelint-config-recommended-scss": "4.3.0",
