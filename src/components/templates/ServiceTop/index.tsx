@@ -11,6 +11,18 @@ function ServiceTop(): JSX.Element {
       {
         children: (
           <a
+            href="https://omocoro-daily.kk-web.link/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            オモコロ&デイリーポータルＺ非公式リーダー
+          </a>
+        ),
+        key: "オモコロ&デイリーポータルＺ非公式リーダー",
+      },
+      {
+        children: (
+          <a
             href="https://on-memo.kk-web.link/"
             rel="noreferrer"
             target="_blank"
@@ -19,6 +31,18 @@ function ServiceTop(): JSX.Element {
           </a>
         ),
         key: "おんめも",
+      },
+      {
+        children: (
+          <a
+            href="https://siritori-timer.kk-web.link/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            限界しりとりタイマー
+          </a>
+        ),
+        key: "限界しりとりタイマー",
       },
       {
         children: (
@@ -43,18 +67,6 @@ function ServiceTop(): JSX.Element {
           </a>
         ),
         key: "レシグル",
-      },
-      {
-        children: (
-          <a
-            href="https://siritori-timer.kk-web.link/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            限界しりとりタイマー
-          </a>
-        ),
-        key: "限界しりとりタイマー",
       },
     ],
     []
