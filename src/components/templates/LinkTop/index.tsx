@@ -47,6 +47,18 @@ function LinkTop(): JSX.Element {
       {
         children: (
           <a
+            href="https://twitter.com/piro0919"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        ),
+        key: "Twitter",
+      },
+      {
+        children: (
+          <a
             href="https://www.wantedly.com/users/125337597"
             rel="noreferrer"
             target="_blank"
