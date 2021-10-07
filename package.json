@@ -71,7 +71,7 @@
     "rooks": "5.7.1",
     "sass": "1.42.1",
     "sass-mq": "5.0.1",
-    "use-http": "1.0.24"
+    "use-http": "1.0.26"
   },
   "description": "Freelance front-end programmer piro's website",
   "devDependencies": {
