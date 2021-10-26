@@ -10,7 +10,7 @@ function SiteTop(): JSX.Element {
     () => [
       {
         children: (
-          <a href="http://kontaniki.com/" rel="noreferrer" target="_blank">
+          <a href="https://kontaniki.com/" rel="noreferrer" target="_blank">
             1stKontact
           </a>
         ),
