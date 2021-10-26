@@ -16,6 +16,18 @@ function SiteTop(): JSX.Element {
         ),
         key: "1stKontact",
       },
+      {
+        children: (
+          <a
+            href="https://hatake.kk-web.link/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            はじめしゃちょーの畑 非公式ファンサイト
+          </a>
+        ),
+        key: "はじめしゃちょーの畑 非公式ファンサイト",
+      },
     ],
     []
   );
