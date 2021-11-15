@@ -28,7 +28,7 @@ function AboutTop(): JSX.Element {
       {
         description: (
           <a
-            href="https://www.wantedly.com/users/125337597"
+            href="https://www.wantedly.com/id/kawamura_kouhei"
             rel="noreferrer"
             target="_blank"
           >
