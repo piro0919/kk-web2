@@ -35,7 +35,7 @@ function LinkTop(): JSX.Element {
       {
         children: (
           <a
-            href="https://join.slack.com/t/kk-webhq/shared_invite/zt-r0qjvw1f-5QCnXyGzW4~OA6574tIipg"
+            href="https://join.slack.com/t/kk-web-hq/shared_invite/zt-zf4pqzow-csAbIKMA9fp7ocQxZgydCw"
             rel="noreferrer"
             target="_blank"
           >

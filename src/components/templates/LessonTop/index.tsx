@@ -6,7 +6,7 @@ import Button from "components/atoms/Button";
 function LessonTop(): JSX.Element {
   const handleClick = useCallback(() => {
     window.open(
-      "https://join.slack.com/t/kk-webhq/shared_invite/zt-r0qjvw1f-5QCnXyGzW4~OA6574tIipg",
+      "https://join.slack.com/t/kk-web-hq/shared_invite/zt-zf4pqzow-csAbIKMA9fp7ocQxZgydCw",
       "_blank"
     );
   }, []);
