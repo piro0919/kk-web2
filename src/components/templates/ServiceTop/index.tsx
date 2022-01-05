@@ -11,6 +11,18 @@ function ServiceTop(): JSX.Element {
       {
         children: (
           <a
+            href="https://omocoro-archive.kk-web.link/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            オモコロアーカイブ
+          </a>
+        ),
+        key: "オモコロアーカイブ",
+      },
+      {
+        children: (
+          <a
             href="https://omocoro-daily.kk-web.link/"
             rel="noreferrer"
             target="_blank"
