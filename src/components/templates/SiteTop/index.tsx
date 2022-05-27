@@ -10,6 +10,18 @@ function SiteTop(): JSX.Element {
     () => [
       {
         children: (
+          <a
+            href="https://www.nbhyakuhati.com/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            7:08
+          </a>
+        ),
+        key: "1stKontact",
+      },
+      {
+        children: (
           <a href="https://kontaniki.com/" rel="noreferrer" target="_blank">
             1stKontact
           </a>
