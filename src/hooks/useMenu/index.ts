@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { blog } from "react-icons-kit/icomoon/blog";
 import { briefcase } from "react-icons-kit/icomoon/briefcase";
-import { bubbles2 } from "react-icons-kit/icomoon/bubbles2";
 import { home } from "react-icons-kit/icomoon/home";
 import { link } from "react-icons-kit/icomoon/link";
 import { user } from "react-icons-kit/icomoon/user";
@@ -37,11 +36,6 @@ function useMenu(): MenuData {
         icon: androidMail,
         name: "Contact",
         to: "/contact",
-      },
-      {
-        icon: bubbles2,
-        name: "Lesson",
-        to: "/lesson",
       },
       {
         icon: link,
