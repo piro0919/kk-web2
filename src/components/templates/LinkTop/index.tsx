@@ -35,18 +35,6 @@ function LinkTop(): JSX.Element {
       {
         children: (
           <a
-            href="https://join.slack.com/t/kk-web-hq/shared_invite/zt-zf4pqzow-csAbIKMA9fp7ocQxZgydCw"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Slack
-          </a>
-        ),
-        key: "Slack",
-      },
-      {
-        children: (
-          <a
             href="https://twitter.com/piro0919"
             rel="noreferrer"
             target="_blank"
