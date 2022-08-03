@@ -11,6 +11,18 @@ function SiteTop(): JSX.Element {
       {
         children: (
           <a
+            href="https://kanaohonten.vercel.app/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            金尾本店
+          </a>
+        ),
+        key: "金尾本店",
+      },
+      {
+        children: (
+          <a
             href="https://www.nbhyakuhati.com/"
             rel="noreferrer"
             target="_blank"
@@ -18,7 +30,7 @@ function SiteTop(): JSX.Element {
             7:08
           </a>
         ),
-        key: "1stKontact",
+        key: "7:08",
       },
       {
         children: (
