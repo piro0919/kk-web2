@@ -11,6 +11,18 @@ function NpmTop(): JSX.Element {
       {
         children: (
           <a
+            href="https://www.npmjs.com/package/next-firebase-authentication"
+            rel="noreferrer"
+            target="_blank"
+          >
+            next-firebase-authentication
+          </a>
+        ),
+        key: "next-firebase-authentication",
+      },
+      {
+        children: (
+          <a
             href="https://www.npmjs.com/package/react-comic-viewer"
             rel="noreferrer"
             target="_blank"
