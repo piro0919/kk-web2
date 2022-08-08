@@ -11,6 +11,18 @@ function ServiceTop(): JSX.Element {
       {
         children: (
           <a
+            href="https://taicho.kk-web.link/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            たいちょ
+          </a>
+        ),
+        key: "たいちょ",
+      },
+      {
+        children: (
+          <a
             href="https://recban.kk-web.link/"
             rel="noreferrer"
             target="_blank"
